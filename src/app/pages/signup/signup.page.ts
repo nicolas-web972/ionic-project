@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { UserCredential } from 'firebase/auth';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +10,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthService, private router: Router) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
+
 
 }

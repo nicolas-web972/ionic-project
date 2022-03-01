@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+
+</ion-header>
+<ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/images/header1.png"></ion-img>
+    <ion-card-content>
+      <form>
+        <div class="wrapform">
+          <ion-item>
+            <ion-input type="text" name="email" [(ngModel)]="email" placeholder="E-mail">
+              <ion-icon name="mail-outline"></ion-icon>
+            </ion-input>
+          </ion-item>
+          <!-- <div>
+            <ng-container>
+                  <div class="error_message" *ngIf="(email.dirty || email.touched) && email.errors">
+                    E-mail invalide
+                  </div>
+            </ng-container>
+        </div> -->
+        </div>
+
+        <div class="sign-btn-wrap">
+          <ion-button shape="round" type="submit" fill="solid" class="sign-btn" (click)="forgotPassword()">
+            Changer de mot de passe</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+  <div class="ion-card-footer">
+    <span>Je n'ai pas de compte ?</span><button class="ion-no-padding" (click)="register()">Je m'inscris</button>
+  </div>
+  <div class="ion-card-footer">
+    <span>J'ai déja un compte.</span><button class="ion-no-padding" [routerLink]="['/']">Je me connecte</button>
+  </div>
+</ion-content>

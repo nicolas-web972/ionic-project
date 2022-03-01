@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth.service';
+import { AlertController, LoadingController, NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginscreen',
@@ -7,32 +10,72 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
   styleUrls: ['./loginscreen.page.scss'],
 })
 export class LoginscreenPage implements OnInit {
-
-  validationUserMessage = {
-    email:[
-      {type:"required", message:"Merci de remplir de champs e-mail"},
-      {type:"pattern", message:"L'e-mail est incorrect. Veuillez réessayer"}
-    ],
-    password:[
-      {type:"required", message:"Merci de remplir de champs mot de passe"},
-      {type:"minlength", message:"Le mot de passe doit avoir au moins 5 caractères"}
-    ]
-  };
+  credentials: FormGroup;
 
   validationFormUser: FormGroup;
-  constructor(public formBuilder: FormBuilder) { }
+  constructor(
+    private fb: FormBuilder,
+    private loadingController: LoadingController,
+    private alertController: AlertController,
+    private authService: AuthService,
+    private router: Router
+  ) {}
+
+  get email() {
+    return this.credentials.get('email');
+  }
+
+  get password() {
+    return this.credentials.get('password');
+  }
 
   ngOnInit() {
-    this.validationFormUser = this.formBuilder.group({
-      email: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
-      ])),
-
-      password: new FormControl('', Validators.compose([
-        Validators.required,
-        Validators.minLength(5)
-      ]))
+    this.credentials = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
     });
   }
+
+  async register() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const user = await this.authService.register(this.credentials.value);
+    await loading.dismiss();
+
+    if (!user) {
+      this.router.navigateByUrl('/signup', { replaceUrl: true });
+    } else {
+      this.showAlert('Erreur d\'inscription', 'essayez de nouveau!');
+    }
+  }
+
+  async login() {
+    const loading = await this.loadingController.create();
+    await loading.present();
+
+    const user = await this.authService.login(this.credentials.value);
+    await loading.dismiss();
+
+    if (user) {
+      this.router.navigateByUrl('/home', { replaceUrl: true });
+    } else {
+      this.showAlert('Erreur de connexion', 'essayez de nouveau!');
+    }
+  }
+
+  async showAlert(header, message) {
+    const alert = await this.alertController.create({
+      header,
+      message,
+      buttons: ['OK'],
+    });
+    await alert.present();
+  }
+
+  async reset() {
+    this.router.navigateByUrl('/reset', { replaceUrl: true });
+  }
 }
+
+
