@@ -1,9 +1,35 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>Accueil</ion-title>
-  </ion-toolbar>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-card class="ion-no-margin">
+    <ion-img src="assets/images/header.png"></ion-img>
+    <ion-card-header>
+    <ion-card-title>
+        Bienvenue sur votre compte !
+      </ion-card-title>
+      <ion-card-subtitle>
+        <p>Cette application est un test en Ionic pour USTS.</p>
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="signin-btns">
+        <ion-button fill="solid" shape="round"  class="loginbtn" (click)="logout()">Se déconnecter</ion-button>
+      </div>
+      <div class="text-tag">
+        <span>Nous suivre sur les réseaux sociaux</span>
+      </div>
 
+      <div class="social-btns">
+        <ion-button fill="clear" class="facebookbtn ion-no-padding">
+          <ion-img src="assets/images/facebook-ico.png"></ion-img>
+        </ion-button>
+        <ion-button fill="clear" class="googlebtn ion-no-padding">
+          <ion-img src="assets/images/google-ico.png"></ion-img>
+        </ion-button>
+          </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
