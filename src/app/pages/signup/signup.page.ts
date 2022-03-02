@@ -45,7 +45,7 @@ export class SignupPage implements OnInit {
     await loading.dismiss();
 
     if (userRegis) {
-      this.router.navigateByUrl('signup');
+      this.router.navigateByUrl('loginscreen');
     } else {
       await this.showAlert('Inscription réussie', 'un nouveau compte est créé !');
     }
