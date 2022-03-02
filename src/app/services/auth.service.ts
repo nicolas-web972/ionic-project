@@ -17,13 +17,14 @@ export class AuthService {
 
   async register({ email, password }) {
     try {
-      const user = await createUserWithEmailAndPassword(
+      const userRegis = await createUserWithEmailAndPassword(
         this.auth,
         email,
         password
       );
-      return user;
+      return userRegis;
     } catch (e) {
+      console.log('error->',e);
       return null;
     }
   }
@@ -45,9 +46,8 @@ export class AuthService {
       message: 'Un e-mail vous a été envoyé !',
       buttons: ['OK']
     });
-     alert.present();
+    alert.present();
   }
-
 
    // Recover password
   async sendPasswordReset(email) {
@@ -58,5 +58,17 @@ export class AuthService {
       console.error(err);
      }
     }
+
+    // async sendVerifcationEmail(){
+    //   try {
+    //     return (await this.auth.currentUser).sendEmailVerification();
+    //   } catch (error) {
+    //     console.log('Error->', error);
+    //   }
+    // }
+
+    // isEmailVerified(user: User): boolean {
+    //   return user.emailVerified === true ? true : false;
+    // }
   };
 
