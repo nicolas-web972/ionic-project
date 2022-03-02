@@ -17,22 +17,40 @@
         Créer un compte en remplissant se formulaire.
       </ion-card-subtitle>
     </ion-card-header>
-    <form>
+    <form (ngSubmit)="register()" [formGroup]="credentials">
       <ion-card-content>
 
         <ion-item>
-          <ion-input name="email" type="text" placeholder="E-mail">
+          <ion-input name="email" type="text" placeholder="E-mail" formControlName="email">
             <ion-icon name="mail-outline"></ion-icon>
-          </ion-input>
+           </ion-input>
+           <div>
+            <ng-container>
+              <div
+                class="error_message"
+                *ngIf="(email.dirty || email.touched) && email.errors">
+                E-mail invalide
+              </div>
+            </ng-container>
+          </div>
         </ion-item>
 
         <ion-item>
-          <ion-input name="password" type="password" placeholder="************">
+          <ion-input name="password" type="password" placeholder="************" formControlName="password">
             <ion-icon name="lock-closed"></ion-icon>
           </ion-input>
+          <div>
+            <ng-container>
+              <div
+                class="error_message"
+                *ngIf="(password.dirty || password.touched) && password.errors">
+                Le mot de passe doit avoir au moins 5 caractères
+              </div>
+            </ng-container>
+          </div>
         </ion-item>
         <div class="sign-btn-wrap">
-          <ion-button shape="round" type="submit" fill="solid" class="sign-btn" [actionButtonText]="'Create Account'">
+          <ion-button shape="round" type="submit" fill="solid" class="sign-btn" (click)="register()">
             S'inscrire
           </ion-button>
         </div>

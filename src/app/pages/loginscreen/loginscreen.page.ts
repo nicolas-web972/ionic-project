@@ -36,20 +36,6 @@ export class LoginscreenPage implements OnInit {
     });
   }
 
-  async register() {
-    const loading = await this.loadingController.create();
-    await loading.present();
-
-    const user = await this.authService.register(this.credentials.value);
-    await loading.dismiss();
-
-    if (!user) {
-      this.router.navigateByUrl('/signup', { replaceUrl: true });
-    } else {
-      this.showAlert('Erreur d\'inscription', 'essayez de nouveau!');
-    }
-  }
-
   async login() {
     const loading = await this.loadingController.create();
     await loading.present();
