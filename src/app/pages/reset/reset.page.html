@@ -29,7 +29,7 @@
     </ion-card-content>
   </ion-card>
   <div class="ion-card-footer">
-    <span>Je n'ai pas de compte ?</span><button class="ion-no-padding" (click)="register()">Je m'inscris</button>
+    <span>Je n'ai pas de compte ?</span><button class="ion-no-padding" [routerLink]="['/signup']">Je m'inscris</button>
   </div>
   <div class="ion-card-footer">
     <span>J'ai déja un compte.</span><button class="ion-no-padding" [routerLink]="['/']">Je me connecte</button>

@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text="">
+      <ion-back-button defaultHref="loginscreen" text="">
       </ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -35,6 +35,9 @@
           <ion-button shape="round" type="submit" fill="solid" class="sign-btn" [actionButtonText]="'Create Account'">
             S'inscrire
           </ion-button>
+        </div>
+        <div class="ion-card-footer">
+          <span>J'ai déja un compte.</span><button class="ion-no-padding" [routerLink]="['/']">Je me connecte</button>
         </div>
       </ion-card-content>
     </form>
