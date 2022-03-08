@@ -4,8 +4,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { UserCredential } from 'firebase/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AlertController, LoadingController } from '@ionic/angular';
-
-
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.page.html',

@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AuthService } from 'src/app/services/auth.service';
 import { AlertController, LoadingController, NavController } from '@ionic/angular';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-loginscreen',
   templateUrl: './loginscreen.page.html',
@@ -11,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class LoginscreenPage implements OnInit {
   credentials: FormGroup;
-
   validationFormUser: FormGroup;
   constructor(
     private fb: FormBuilder,
