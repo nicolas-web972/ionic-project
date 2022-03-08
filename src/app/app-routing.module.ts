@@ -34,7 +34,6 @@ const routes: Routes = [
     loadChildren: () => import('./pages/reset/reset.module').then( m => m.ResetPageModule)
   },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

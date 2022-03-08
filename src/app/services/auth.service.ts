@@ -56,19 +56,7 @@ export class AuthService {
       this.presentAlert();
     } catch (err) {
       console.error(err);
-     }
     }
-
-    // async sendVerifcationEmail(){
-    //   try {
-    //     return (await this.auth.currentUser).sendEmailVerification();
-    //   } catch (error) {
-    //     console.log('Error->', error);
-    //   }
-    // }
-
-    // isEmailVerified(user: User): boolean {
-    //   return user.emailVerified === true ? true : false;
-    // }
-  };
+  }
+};
 
