@@ -6,34 +6,15 @@ ion-header {
   position: absolute;
 }
 
-ion-toolbar {
-  --ion-background-color: transparent;
-  --opacity: 0;
-}
-
 .signin-btns {
   margin-top: 20px;
   text-align: center;
-  width: 100%;}
+  width: 100%;
+}
 
 .loginbtn {
   --ion-color-primary: #215AB7;
   width: 80%;
-}
-
-.signinbtn {
-  width: 80%;
-  margin-top: 10px;
-}
-
-.text-tag {
-  margin-top: 40px;
-  text-align: center;
-  span {
-    font-size: 13px;
-    font-weight: normal;
-    color: grayscale($color: #000000);
-  }
 }
 
 .social-btns {

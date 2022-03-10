@@ -1,3 +1,4 @@
+<!-- Page d'inscription-->
 <ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-buttons slot="start">
@@ -17,14 +18,14 @@
         Créer un compte en remplissant se formulaire.
       </ion-card-subtitle>
     </ion-card-header>
+
     <form (ngSubmit)="register()" [formGroup]="credentials">
       <ion-card-content>
-
         <ion-item>
           <ion-input name="email" type="text" placeholder="E-mail" formControlName="email">
             <ion-icon name="mail-outline"></ion-icon>
-           </ion-input>
-           <div>
+          </ion-input>
+          <div>
             <ng-container>
               <div
                 class="error_message"

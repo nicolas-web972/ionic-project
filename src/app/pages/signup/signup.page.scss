@@ -83,7 +83,6 @@ ion-item {
     color: #F4F6FA;
     background-color: #215AB7;
     border-radius: 25px;
-
   }
 }
 
@@ -95,15 +94,6 @@ ion-item {
     font-size: 13px;
     font-weight: normal;
     color: #334862;
-  }
-}
-
-.social-btns {
-  text-align: center;
-
-  ion-button {
-    width: 30px;
-    padding-left: 5px !important;
   }
 }
 
@@ -138,10 +128,4 @@ ion-item {
   button:hover {
     color: #969393;
   }
-}
-
-.button-inner {
-  margin-left: 10px !important;
-  margin-top: 20px !important;
-  color: black;
 }
