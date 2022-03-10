@@ -1,12 +1,8 @@
-<ion-header class="ion-no-border">
-  <ion-toolbar> </ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-back-button defaulthref="login" text=""></ion-back-button>
-  </ion-buttons>
-</ion-header>
+<!-- Page de connection -->
 <ion-content>
   <ion-card class="ion-no-margin">
     <ion-img src="assets/images/header1.png"></ion-img>
+
     <ion-card-content>
       <form [formGroup]="credentials" (ngSubmit)="login()">
         <div class="wrapform">
@@ -50,8 +46,8 @@
           </div>
         </div>
         <div class="password_forgot">
-          <ion-button fill="clear" class="ion-no-padding" [routerLink]="['/reset']"
-            >Mot de passe oublié ?
+          <ion-button fill="clear" class="ion-no-padding" [routerLink]="['/reset']">
+            Mot de passe oublié ?
           </ion-button>
         </div>
         <div class="sign-btn-wrap">
@@ -67,8 +63,9 @@
       </form>
     </ion-card-content>
   </ion-card>
+
   <div class="ion-card-footer">
-    <span>Je n'ai pas de compte ?</span
-    ><button class="ion-no-padding" [routerLink]="['/signup']">Je m'inscris</button>
+    <span>Je n'ai pas de compte ?</span>
+    <button class="ion-no-padding" [routerLink]="['/signup']">Je m'inscris</button>
   </div>
 </ion-content>

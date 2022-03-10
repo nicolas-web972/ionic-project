@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomePage implements OnInit {
 
   constructor(
-    // private avatarService: AvatarService,
     private loadingController: LoadingController,
     private alertController: AlertController,
     private authService: AuthService,
