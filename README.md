@@ -8,7 +8,7 @@
 
   1. Téléchargement du dossier Repository GitHub.
      `git clone git@github.com:nicolas-web972/ionic-project.git`
-  2. Taper la ligne de commande : `npm install -g @ionic/cli`
+  2. Taper la ligne de commande pour installer Ionic : `npm install -g @ionic/cli`
   3. Ouverture du visuel multi-plateformes avec la ligne de commande :
      `ionic serve --lab`
 
